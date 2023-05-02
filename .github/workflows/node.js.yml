@@ -33,5 +33,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: risquete\stemdonode:latest
+          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{steps.get-tags.outputs.tags }}
 
