@@ -33,5 +33,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: risquete\stemdonode:v1
+          tags: risquete\stemdonode:latest
 
