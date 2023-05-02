@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: www.calculadora-express.com
+    http:
+      paths:
+      - path: /calcular/*
+        pathType: Prefix
+        backend:
+          service:
+            name: node-service
+            port:
+              name: http
