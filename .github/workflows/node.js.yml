@@ -23,6 +23,8 @@ jobs:
           node-version: '14'
           cache: 'npm'
           cache-dependency-path: app/package.json
+      - run: npm install
+      - run: npm test 
       - name: Login en dockerhub
         uses: docker/login-action@v1
         with:
@@ -34,4 +36,6 @@ jobs:
           context: .
           push: true
           tags: risquete/stemdonode
+          
+        
 
