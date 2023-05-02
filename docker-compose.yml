@@ -1,0 +1,36 @@
+version: "3.4"
+services:
+  dapp1:
+    build: .
+    ports:
+    - "5004:5000"
+    volumes:
+      - volumencito:/app/data
+  dapp2:
+    build: .
+    ports:
+    - "5005:5000"
+    volumes:
+      - volumencito:/app/data
+  dapp3:
+    build: .
+    ports:
+    - "5006:5000"
+    volumes:
+      - volumencito:/app/data
+volumes:
+  volumencito:
+    external: true
+
+# sudo docker volume create volumencito
+# sudo docker run --name dapp1 -p 5004:5000 -v volumencito:/app/data dappimagen:v1
+# sudo docker run --name dapp2 -p 5005:5000 -v volumencito:/app/data dappimagen:v1
+# sudo docker run --name dapp3 -p 5006:5000 -v volumencito:/app/data dappimagen:v1
+
+
+
+
+
+
+
+
